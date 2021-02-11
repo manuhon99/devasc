@@ -1,4 +1,4 @@
-import requests # MISSION: Module name is missing
+import requests 
 import json
 import os
 
@@ -17,19 +17,17 @@ httpHeaders = {"Content-type": "application/json",
 
 
 def post_message(room_id, text):
-
-    #print(''.join(text))
-    
+   
     """
     This function will post a message to the
     room based on provided room ID
     """
     string=''
     message=string.join(text)
-    apiUrl = "https://webexapis.com/v1/messages" # MISSION: Provide the resource URL for creating Messages
+    apiUrl = "https://webexapis.com/v1/messages"
     body = {"roomId": room_id, "text": message}
 
-    response = requests.post(url=apiUrl, json=body, headers=httpHeaders) #MISSION: requests method is missing
+    response = requests.post(url=apiUrl, json=body, headers=httpHeaders) 
 
     if response.status_code == 200:
         print("Your message was successfully posted to the room")
