@@ -18,7 +18,6 @@ cisco1 = {
     }   
 
 command = "show interfaces"
-# MISSION: room_id obtained from Webex API documentation
 
 def get_interfaces():
     with ConnectHandler(**cisco1) as net_connect:
@@ -32,6 +31,7 @@ def get_interfaces():
         text = f'A interface {interface} está em estado operacional {status}. \n'
         if equip:
             message.append(text)
+    #POST message on webex room
     desafioWebex.post_message(room_id, message)         
 
 def main():
